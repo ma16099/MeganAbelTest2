@@ -20,8 +20,6 @@ public class CustomerOrderTest {
         inventory.addItem("Cheese Pizza", 8);
         inventory.addItem("Garlic Bread", 15);
     }
-    
-  
 	
     // ToDo: Test placing a valid order
  	// Add items to the order, verify the number of items, and check if the total cost is calculated correctly.
@@ -64,8 +62,14 @@ public class CustomerOrderTest {
 		assertTrue(inventory.isLowStock("Garlic Bread"));
 	}
 
-	// ToDo: Test order status updates
+	// TODO: Test order status updates
 	// Set the status of the order and verify that the status is updated correctly.
 
+	@Test
+	public void testOrderStatusUpdate() {
+		order.addItem("Cheese Pizza", 10.00);
+		order.setStatus("Ready");
+		assertEquals("Ready", order.getStatus());
+	}
 
 }
